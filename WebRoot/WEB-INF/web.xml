@@ -20,6 +20,14 @@
     <servlet-name>SublistServlet</servlet-name>
     <url-pattern>/sublist/SublistServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>JdbcSqlServlet</servlet-name>
+    <servlet-class>com.imooc.page.servlet.JdbcSqlServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JdbcSqlServlet</servlet-name>
+    <url-pattern>/jdbcSql/JdbcSqlServlet</url-pattern>
+  </servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
