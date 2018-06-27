@@ -3,6 +3,16 @@ package com.imooc.page.model;
 import java.io.Serializable;
 import java.util.Map;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table( name = "t_student" )
 public class Student implements Serializable {
 
 	private static final long serialVersionUID = -7476381137287496245L;
@@ -37,7 +47,10 @@ public class Student implements Serializable {
 		this.gender = (int)map.get("gender");
 		this.address = (String)map.get("address");
 	}
-
+	
+	@Id
+	@GeneratedValue(generator="increment")
+	@GenericGenerator(name="increment", strategy = "increment")
 	public int getId() {
 		return id;
 	}
@@ -45,15 +58,17 @@ public class Student implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
+	@Column(name = "stu_name")
 	public String getStuName() {
 		return stuName;
 	}
-
+	
 	public void setStuName(String stuName) {
 		this.stuName = stuName;
 	}
-
+	
+	@Column(name="age")
 	public int getAge() {
 		return age;
 	}
@@ -61,7 +76,8 @@ public class Student implements Serializable {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
+	
+	@Column(name="gender")
 	public int getGender() {
 		return gender;
 	}
@@ -69,7 +85,8 @@ public class Student implements Serializable {
 	public void setGender(int gender) {
 		this.gender = gender;
 	}
-
+	
+	@Column(name="address")
 	public String getAddress() {
 		return address;
 	}
